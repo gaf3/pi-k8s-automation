@@ -71,6 +71,9 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 - On Raspberry Pi:
   - `sudo apt-get install netatalk`
   - Get IP `ifconfig`
+
+## Connect and develop
+
 - On Mac
   - `open afp://<ip>`
   - Checkout repo to `/Volumes/Home Directory`
