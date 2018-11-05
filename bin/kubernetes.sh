@@ -18,4 +18,5 @@ echo $orig | sudo tee /boot/cmdline.txt
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
   echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
   sudo apt-get update -q && \
-sudo apt-get install -qy kubeadm=1.10.9
+  sudo apt-get install -qy kubelet=1.10.2-00 kubectl=1.10.2-00 kubeadm=1.10.2-00
+  sudo apt-mark hold kubelet kubectl kubeadm
