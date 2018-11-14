@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install Docker
-curl -sSL get.docker.com | sh && \
+sudo apt-get install docker-ce=18.06.1~ce~3-0~raspbian  && \
   sudo usermod pi -aG docker
 
 # Disable Swap
