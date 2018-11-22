@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+sudo apt update
+sudo apt install -y \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     gnupg2 \
+     software-properties-common
+
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+
+echo "deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+     $(lsb_release -cs) stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list
+
+sudo apt update
+
 # Install Docker
 sudo apt-get install docker-ce=18.06.1~ce~3-0~raspbian  && \
   sudo usermod pi -aG docker
@@ -11,7 +27,7 @@ sudo dphys-swapfile swapoff && \
 echo Adding " cgroup_enable=cpuset cgroup_enable=memory" to /boot/cmdline.txt
 sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt
 # if you encounter problems, try changing cgroup_memory=1 to cgroup_enable=memory.
-orig="$(head -n1 /boot/cmdline.txt) cgroup_enable=cpuset cgroup_memory=1"
+orig="$(head -n1 /boot/cmdline.txt) cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1"
 echo $orig | sudo tee /boot/cmdline.txt
 
 # Add repo list and install kubeadm

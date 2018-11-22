@@ -26,6 +26,16 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 - On Pi (connect monitor and keyboard)
   - Change pi@ password `passwd`
   - Become root `sudo -i`
+  - Set keyboard `raspi-config`
+    - Localisation Options (return)
+    - Change Keyboard Layout (return)
+    - Generic 105-key (Intl) PC (default / return)
+    - Other (return)
+    - English (US) (return)
+    - English (US) (return)
+    - (tab, return)
+    - (tab, return)
+    - (tab, tab, return)
   - Set Hostname `/boot/pi-k8s/hostname.sh pi-k8s-node00+`
   - Enable Wifi `/boot/pi-k8s/wifi.sh` (If Wifi)
   - Get wlan0 (wifi) or eth0 (no wifi) MAC address `ifconfig`
@@ -37,7 +47,6 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 ## Install Kubernets
 
 - On all nodes `/boot/pi-k8s/kubernetes.sh`
-- Add `cgroup_enable=memory` to `/boot/cmdline.txt`
 - Reboot Pi
 
 ## Initialize Kubernetes Master
