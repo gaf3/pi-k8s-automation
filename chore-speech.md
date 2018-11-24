@@ -55,6 +55,8 @@ Then
 
 ## node event daemon
 
+[pi-k8s-fitches-event-daemon](https://github.com/gaf3/pi-k8s-fitches-event-daemon)
+
 Runs on each k8s node with the label buttons=enabled (one with speakers). Sets an interrupt call on the rising edge of the button. When pressed, pushes a JSON object onto the event channel recording:
 - timestamp
 - button pressed
@@ -74,6 +76,8 @@ Can be down with a button and two wires and GPIO pin with a pull down resistor s
 
 All API's will be Python connexion / Flask apps.
 All Daemons will be Python do stuff and sleep loops.
+
+[pi-k8s-api template](https://github.com/gaf3/pi-k8s-api)
 
 ## speech API
 
