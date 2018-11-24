@@ -36,6 +36,9 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
     - (tab, return)
     - (tab, return)
     - (tab, tab, return)
+  - Update firmware:
+    - `apt-get install rpi-update`
+    - `rpi-update`
   - Set Hostname `/boot/pi-k8s/hostname.sh pi-k8s-node00+`
   - Enable Wifi `/boot/pi-k8s/wifi.sh` (If Wifi)
   - Get wlan0 (wifi) or eth0 (no wifi) MAC address `ifconfig`
@@ -80,13 +83,13 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 
 - On Raspberry Pi:
   - `sudo apt-get install netatalk`
+  - Checkout repo
   - Get IP `ifconfig`
 
 ## Connect and develop
 
 - On Mac
   - `open afp://<ip>`
-  - Checkout repo to `/Volumes/Home Directory`
   - Open into VSCode
   - Open shell
   - `ssh pi@<ip>`
