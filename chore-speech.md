@@ -90,12 +90,6 @@ Looks at any current chores on a node, determines
 - speaks if needed by pushing a JSON object onto the speech channel in Redis
 - records that it spoke.
 
-## chore API
-
-Reads any chore templates from chore storage able to
-- initiate a chore on a node for a child 
-- record that a task was done (or really wasn't done with these little bastards).
-
 ## chore event daemon
 
 Listens to the event channel. If 
@@ -104,6 +98,12 @@ Listens to the event channel. If
 Then 
 - push to the sppech channel the task is done
 - will record that task as done and start the next.
+
+## chore API
+
+Reads any chore templates from chore storage able to
+- initiate a chore on a node for a child 
+- record that a task was done (or really wasn't done with these little bastards).
 
 # Interfaces
 
