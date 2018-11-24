@@ -102,6 +102,7 @@ Listens to the event channel. If
 - an event comes in for button pressed on a node 
 - that node has an active chore/task on it.
 Then 
+- push to the sppech channel the task is done
 - will record that task as done and start the next.
 
 # Interfaces
