@@ -2,6 +2,10 @@
 
 Home automation using Raspberry Pi's running Kubernetes
 
+# Projects
+
+- [Chore Speech](/chore-speech.md)
+
 # Installation of cluster
 
 Just want to document the steps used to get things up and running.  Automating the automation making these repeatable, all that's outside the scope here.  Better to have steps with cut and paste than over do it.  We just want to know what'll it take to get things work and stable. 

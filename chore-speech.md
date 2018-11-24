@@ -41,7 +41,7 @@ Redis pubsub. A JSON object is pushed containing
 
 # Daemon Sets:
 
-## node speech daemon
+## [node speech daemon](https://github.com/gaf3/pi-k8s-fitches-speech-daemon)
 
 Runs on each k8s node with the label audio=enabled (one with speakers). Reads from the Redis speech channel. If
 - the timestamp is after when the daemon first started up and
