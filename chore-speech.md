@@ -79,6 +79,8 @@ All API's will be Python connexion / Flask apps.
 All Daemons will be Python do stuff and sleep loops.
 
 [pi-k8s-api template](https://github.com/gaf3/pi-k8s-api)
+[pi-k8s-chore-redis library](https://github.com/gaf3/pi-k8s-chore-redis)
+
 
 ## speech API
 
@@ -111,6 +113,8 @@ Then
 - will record that task as done and start the next.
 
 ## chore API
+
+[pi-k8s-fitches-chore-api](https://github.com/gaf3/pi-k8s-fitches-chore-api)
 
 Reads any chore templates from chore storage able to
 - initiate a chore on a node for a child 
