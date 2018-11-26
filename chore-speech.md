@@ -19,6 +19,7 @@
 
 # Redis
 
+[pi-k8s-fitches-redis](https://github.com/gaf3/pi-k8s-fitches-redis)
 
 ## chore data
 
@@ -43,7 +44,7 @@ Redis pubsub. A JSON object is pushed containing
 
 ## node speech daemon
 
-[pi-k8s-fitches-speech-daemon](https://github.com/gaf3/pi-k8s-fitches-speech-daemon)
+[pi-k8s-fitches-node-speech-daemon](https://github.com/gaf3/pi-k8s-fitches-node-speech-daemon)
 
 
 Runs on each k8s node with the label audio=enabled (one with speakers). Reads from the Redis speech channel. If
@@ -55,7 +56,7 @@ Then
 
 ## node event daemon
 
-[pi-k8s-fitches-event-daemon](https://github.com/gaf3/pi-k8s-fitches-event-daemon)
+[pi-k8s-fitches-node-event-daemon](https://github.com/gaf3/pi-k8s-fitches-node-event-daemon)
 
 Runs on each k8s node with the label buttons=enabled (one with speakers). Sets an interrupt call on the rising edge of the button. When pressed, pushes a JSON object onto the event channel recording:
 - timestamp
@@ -81,12 +82,16 @@ All Daemons will be Python do stuff and sleep loops.
 
 ## speech API
 
+[pi-k8s-fitches-speech-api](https://github.com/gaf3/pi-k8s-fitches-speech-api)
+
 Dead simple. RESTful that akes in
 - text to say
 - language to say it in (optional) 
 - node to say it on (optional, if none, says on all) and pushes a JSON object on the speech channel in Redis.
 
 ## chore speech daemon
+
+[pi-k8s-fitches-chore-speech-daemon](https://github.com/gaf3/pi-k8s-fitches-chore-speech-daemon)
 
 Looks at any current chores on a node, determines
 - current task
@@ -95,6 +100,8 @@ Looks at any current chores on a node, determines
 - records that it spoke.
 
 ## chore event daemon
+
+[pi-k8s-fitches-chore-event-daemon](https://github.com/gaf3/pi-k8s-fitches-chore-event-daemon)
 
 Listens to the event channel. If 
 - an event comes in for button pressed on a node 
