@@ -78,9 +78,8 @@ Can be down with a button and two wires and GPIO pin with a pull down resistor s
 All API's will be Python connexion / Flask apps.
 All Daemons will be Python do stuff and sleep loops.
 
-[pi-k8s-api template](https://github.com/gaf3/pi-k8s-api)
-[pi-k8s-chore-redis library](https://github.com/gaf3/pi-k8s-chore-redis)
-
+- [pi-k8s-api template](https://github.com/gaf3/pi-k8s-api)
+- [pi-k8s-chore-redis library](https://github.com/gaf3/pi-k8s-chore-redis)
 
 ## speech API
 
