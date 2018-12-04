@@ -40,9 +40,6 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
     - (tab, return)
     - (tab, return)
     - (tab, tab, return)
-  - Update firmware:
-    - `apt-get install rpi-update`
-    - `rpi-update`
   - Set Hostname `/boot/pi-k8s/hostname.sh pi-k8s-node00+`
   - Enable Wifi `/boot/pi-k8s/wifi.sh` (If Wifi)
   - Get wlan0 (wifi) or eth0 (no wifi) MAC address `ifconfig`
@@ -53,6 +50,9 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 
 ## Install Kubernets
 
+- Update firmware:
+  - `apt-get install rpi-update`
+  - `rpi-update`
 - On all nodes `/boot/pi-k8s/kubernetes.sh`
 - Reboot Pi
 
