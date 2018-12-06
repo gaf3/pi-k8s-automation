@@ -51,8 +51,9 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 ## Install Kubernets
 
 - Update firmware:
-  - `apt-get install rpi-update`
-  - `rpi-update`
+  - `sudo apt-get install rpi-update`
+  - `sudo rpi-update`
+- Reboot Pi
 - On all nodes `/boot/pi-k8s/kubernetes.sh`
 - Reboot Pi
 
