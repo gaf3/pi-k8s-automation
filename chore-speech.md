@@ -19,7 +19,7 @@
 
 # Redis
 
-[pi-k8s-fitches-redis](https://github.com/gaf3/pi-k8s-fitches-redis)
+[pi-k8s-fitches/redis](https://github.com/pi-k8s-fitches/redis)
 
 ## chore data
 
@@ -44,7 +44,7 @@ Redis pubsub. A JSON object is pushed containing
 
 ## node speech daemon
 
-[pi-k8s-fitches-node-speech-daemon](https://github.com/gaf3/pi-k8s-fitches-node-speech-daemon)
+[pi-k8s-fitches/node-speech-daemon](https://github.com/pi-k8s-fitches/node-speech-daemon)
 
 
 Runs on each k8s node with the label audio=enabled (one with speakers). Reads from the Redis speech channel. If
@@ -56,7 +56,7 @@ Then
 
 ## node event daemon
 
-[pi-k8s-fitches-node-event-daemon](https://github.com/gaf3/pi-k8s-fitches-node-event-daemon)
+[pi-k8s-fitches/node-event-daemon](https://github.com/pi-k8s-fitches/node-event-daemon)
 
 Runs on each k8s node with the label buttons=enabled (one with speakers). Sets an interrupt call on the rising edge of the button. When pressed, pushes a JSON object onto the event channel recording:
 - timestamp
@@ -78,12 +78,12 @@ Can be down with a button and two wires and GPIO pin with a pull down resistor s
 All API's will be Python connexion / Flask apps.
 All Daemons will be Python do stuff and sleep loops.
 
-- [pi-k8s-api template](https://github.com/gaf3/pi-k8s-api)
-- [pi-k8s-chore-redis library](https://github.com/gaf3/pi-k8s-chore-redis)
+- [pi-k8s-api template](https://github.com/pi-k8s-api)
+- [pi-k8s-chore-redis library](https://github.com/pi-k8s-chore-redis)
 
 ## speech API
 
-[pi-k8s-fitches-speech-api](https://github.com/gaf3/pi-k8s-fitches-speech-api)
+[pi-k8s-fitches/speech-api](https://github.com/pi-k8s-fitches/speech-api)
 
 Dead simple. RESTful that akes in
 - text to say
@@ -92,7 +92,7 @@ Dead simple. RESTful that akes in
 
 ## chore speech daemon
 
-[pi-k8s-fitches-chore-speech-daemon](https://github.com/gaf3/pi-k8s-fitches-chore-speech-daemon)
+[pi-k8s-fitches/chore-speech-daemon](https://github.com/pi-k8s-fitches/chore-speech-daemon)
 
 Looks at any current chores on a node, determines
 - current task
@@ -102,7 +102,7 @@ Looks at any current chores on a node, determines
 
 ## chore event daemon
 
-[pi-k8s-fitches-chore-event-daemon](https://github.com/gaf3/pi-k8s-fitches-chore-event-daemon)
+[pi-k8s-fitches/chore-event-daemon](https://github.com/pi-k8s-fitches/chore-event-daemon)
 
 Listens to the event channel. If 
 - an event comes in for button pressed on a node 
@@ -113,17 +113,17 @@ Then
 
 ## chore calendar daemon
 
-[pi-k8s-fitches-chore-calendar-daemon](https://github.com/gaf3/pi-k8s-fitches-chore-calednar-daemon)
+[pi-k8s-fitches/chore-calendar-daemon](https://github.com/pi-k8s-fitches/chore-calednar-daemon)
 
 Connects to the Goggle Calendar API.
-- Looks for events five muntes before and after current time on the pi-k8s-fitches-chores Calendar
+- Looks for events five muntes before and after current time on the pi-k8s-fitches/chores Calendar
 - If found, Parse the description as a YAML blob
 - Checks to see if the current chore matches
 - If not creates a chore using the YAML blob as a template
 
 ## chore API
 
-[pi-k8s-fitches-chore-api](https://github.com/gaf3/pi-k8s-fitches-chore-api)
+[pi-k8s-fitches/chore-api](https://github.com/pi-k8s-fitches/chore-api)
 
 Reads any chore templates from chore storage able to
 - initiate a chore on a node for a child 
