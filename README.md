@@ -52,7 +52,7 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 - Reboot Pi `shutdown -r now`
 - On Mac
 
-## Install Kubernets
+## Install Kubernetes
 
 - Update firmware:
   - `sudo apt-get install rpi-update`
