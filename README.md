@@ -43,6 +43,10 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
   - Set Hostname `/boot/pi-k8s/hostname.sh pi-k8s-node00+`
   - Enable Wifi `/boot/pi-k8s/wifi.sh` (If Wifi)
   - Get wlan0 (wifi) or eth0 (no wifi) MAC address `ifconfig`
+  - Force HMDI On in /boot/config.txt
+    - hdmi_force_hotplug=1
+    - hdmi_group=2
+    - hdmi_mode=68
 - On Router
   - Reserve IP in Router for 192.168.1.100+
 - Reboot Pi `shutdown -r now`
