@@ -19,7 +19,7 @@
 
 # Demonstration
 
-![Demonstration](https://www.youtube.com/watch?v=hCLAcDx4DKo)
+[![Demonstration](https://img.youtube.com/vi/hCLAcDx4DKo/0.jpg)](https://www.youtube.com/watch?v=hCLAcDx4DKo)
 
 # Redis
 
