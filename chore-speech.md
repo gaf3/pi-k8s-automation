@@ -17,6 +17,10 @@
 
 ![Architecture](/pi-k8s-fitches-chore-speech.png)
 
+# Demonstration
+
+![Demonstration](https://www.youtube.com/watch?v=hCLAcDx4DKo)
+
 # Redis
 
 [pi-k8s-fitches/redis](https://github.com/pi-k8s-fitches/redis)
