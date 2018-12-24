@@ -115,16 +115,6 @@ Then
 - push to the sppech channel the task is done
 - will record that task as done and start the next.
 
-## chore calendar daemon
-
-[pi-k8s-fitches/chore-calendar-daemon](https://github.com/pi-k8s-fitches/chore-calednar-daemon)
-
-Connects to the Goggle Calendar API.
-- Looks for events five muntes before and after current time on the pi-k8s-fitches/chores Calendar
-- If found, Parse the description as a YAML blob
-- Checks to see if the current chore matches
-- If not creates a chore using the YAML blob as a template
-
 ## chore API
 
 [pi-k8s-fitches/chore-api](https://github.com/pi-k8s-fitches/chore-api)
