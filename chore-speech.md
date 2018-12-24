@@ -135,7 +135,11 @@ Simple JavaScript GUI's from https://gaf3.github.io/dotroute/
 
 ## speech GUI
 
+[pi-k8s-fitches/speech-gui](https://github.com/pi-k8s-fitches/speech-gui)
+
 Just interfaces with the speech API. Single page with submission of text to speech.
+
+[pi-k8s-fitches/chore-gui](https://github.com/pi-k8s-fitches/chore-gui)
 
 ## chore GUI
 - able to build chore templates with tasks, how often to speak, default languages
