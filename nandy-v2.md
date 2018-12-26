@@ -146,7 +146,7 @@ Parents should be able to give feedback to the Children and reward them for posi
 
 Parents should be able to sit down with the Children regularly and plan out chores through Google Calendar, how long steps should take etc. 
 
-# Date Models
+# Data Models
 
 ## Redis
 
