@@ -4,7 +4,8 @@ Home automation using Raspberry Pi's running Kubernetes
 
 # Projects
 
-- [Chore Speech](/chore-speech.md)
+- [Chore Speech v1](/chore-speech-v1.md)
+- [Nandy v2](/nandy-v2.md)
 
 # Installation of cluster
 
