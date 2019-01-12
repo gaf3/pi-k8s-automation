@@ -223,7 +223,7 @@ A lot of stuff and very flexible
 
 - id
 - person_id - Mustn't be null
-- label - Human readbale
+- label - Human readable
 - status - "started", "ended"
 - created - Timestamp
 - updated - Timestamp
@@ -233,7 +233,6 @@ A lot of stuff and very flexible
   - paused - If true, task is paused
   - skipped - If true, task is skipped
   - delay - Delay to start reminding (in secs)
-  - interval - Interval in seconds to remind (in secs)
   - start - Time started
   - notified - Time last notified (start, reminder, complete)
   - end - Time it completed (non existement if incomplete)
@@ -243,7 +242,7 @@ A lot of stuff and very flexible
     - paused - If true, task is paused
     - skipped - If true, task is skipped
     - delay - Delay to start reminding (in secs)
-    - interval - Interval in seconds to remind (in secs)
+    - interval - Interval to remind (in secs)
     - start - Time started
       - If non existent, no reminder
     - notified - Time last notified (start, reminder, complete)
@@ -252,11 +251,13 @@ A lot of stuff and very flexible
     - id - area to update upon completion
     - status - status to set it too
 
+There was an interval to remind on chores, but more in a way like every hour or two hours. I think for now any active chores are just collated and reminded for a person. And maybe rename chore_remind to task_remind.  Chore remind is just all chores still on going.
+
 ### Area
 
 Fairly complex as could have owner, chores to create, etc. 
 - id
-- label - Human readbale
+- label - Human readable
 - status - Varies by area (clean / dirty, full / empty)
 - updated - Timestamp
 - data - General JSON blob
@@ -269,7 +270,7 @@ Fairly complex as could have owner, chores to create, etc.
 
 - id
 - person_id - Can't be null
-- label - Human readbale
+- label - Human readable
 - value - "positive", "negative"
 - created - Timestamp
 
@@ -280,7 +281,7 @@ Can't currently see a need for a JSON field
 As complex as Chore or Act, just missing a little info.
 
 - id
-- label - Human readbale
+- label - Human readable
 - kind - "chore", "act"
 - data - Containing what's needs for either, including field values (not just data)
 
@@ -291,7 +292,7 @@ Take names / labels and lowercase / replaces spaces with underscores.
 ### Chore
 
 - nandy.person.{person.name}.chore.{chore.label}.duration - Duration of overall chore at time started
-- nandy.person.{person.name}.chore.{chore.label}.task.{task.label}.duration - Duration of task from time started
+- nandy.person.{person.name}.chore.{chore.label}.task.{task.text}.duration - Duration of task from time started
 
 We can use these to determine how long tasks are taking and adjust reminders to a more reasonable level.
 
@@ -338,15 +339,15 @@ We can use these are reward / punishment.
 
 Core lib for dealing with the three data stores
 
-- speak - Says a phrase based on chore, task, act
 - person CRUD operations - just use model
 - template CRUD operations - just use model
 - area CRUD operations - just use model
 - area_status - Updates and fires off chores if necessary
+- chore_speak - Says a phrase based on chore
 - chore RUD operations - just use model
 - chore_check - Checks a chore to see if there's tasks remaining
 - chore_create - Creates a chore from template
-- chore_remind - Looks through a chore and sees if there's an reminders to go out
+- chore_remind - Looks through all active chores and reminds for the chore and/or tasks
 - chore_next - Completes current tasks and starts next task or finishes chore
 - chore_pause - Pauses a chore
 - chore_unpause - Unpauses a chore
@@ -354,6 +355,7 @@ Core lib for dealing with the three data stores
 - chore_unskip - Unskips a chore
 - chore_complete - Completes a chore
 - chore_incomplete - Incompletes a chore
+- task_speak - Says a phrase based on task
 - task_pause - Pauses a specific chore task
 - task_unpause - Unpauses a specific chore task
 - task_skip - Skips a specific chore task
