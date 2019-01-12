@@ -17,17 +17,19 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
 
 ## Flashing the Drive
 
-- Get image: https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2017-12-01/
+- Get image: https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2018-11-15/
 - Get etcher: https://etcher.io/
 - Flash it
 - Remove and reinsert
 - On Mac in pi-k8s/automation/
   - Enable ssh `touch /Volumes/boot/ssh` (on Mac)
   - Copy over setup `cp -r bin/ /Volumes/boot/pi-k8s/`
+- Eject Card from Finder (boot)
+- Remove it and place it in Pi
 
 ## Enable Networking
 
-- Boot PI
+- Boot Pi
 - On Pi (connect monitor and keyboard)
   - Change pi@ password `passwd`
   - Become root `sudo -i`
@@ -42,6 +44,7 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
     - (tab, return)
     - (tab, tab, return)
   - Set Hostname `/boot/pi-k8s/hostname.sh pi-k8s-node00+`
+  - Enable tmpfs `/boot/pi-k8s/tmpfs.sh` (Increase card life)
   - Enable Wifi `/boot/pi-k8s/wifi.sh` (If Wifi)
   - Get wlan0 (wifi) or eth0 (no wifi) MAC address `ifconfig`
   - Force HMDI On in /boot/config.txt
@@ -59,7 +62,7 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
   - `sudo apt-get install rpi-update`
   - `sudo rpi-update`
 - Reboot Pi
-- On all nodes `/boot/pi-k8s/kubernetes.sh`
+- Whether master or worker `/boot/pi-k8s/kubernetes.sh`
 - Reboot Pi
 
 ## Initialize Kubernetes Master
@@ -71,6 +74,7 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
     - `systemctl daemon-reload`
     - `systemctl restart kubelet.service`
     - Redo Init
+  - Save join command: `echo "<command>" > join.txt`
   - Set up kubectl
     - `mkdir -p $HOME/.kube`
     - `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`

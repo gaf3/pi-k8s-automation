@@ -17,7 +17,7 @@ echo "deb [arch=armhf] https://download.docker.com/linux/$(. /etc/os-release; ec
 sudo apt update
 
 # Install Docker
-sudo apt-get install docker-ce=18.06.1~ce~3-0~raspbian  && \
+sudo apt-get install -qy docker-ce=18.06.1~ce~3-0~raspbian  && \
   sudo usermod pi -aG docker
 
 # Disable Swap
