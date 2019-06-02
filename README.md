@@ -83,6 +83,9 @@ This image looks promising: https://hub.docker.com/r/resin/raspberry-pi-alpine-p
     - `curl -sSL https://rawgit.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml | sed "s/amd64/arm/g" | kubectl create -f -`
   - Check for nodes
     - `kubectl get nodes`
+  - Rename cluster/user/context
+    - `nano ~/.kube/config`
+    - Change all names to `pi-k8s`
 - On worker nodes
   - Paste the join instruction given
   - Set up kubectl
